@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex min-h-screen items-center justify-center bg-gray-100 p-4">
+    <div class="w-full max-w-md overflow-hidden rounded-lg bg-white shadow-lg">
+        <!-- Header -->
+        <div class="bg-[#E9967A] p-4 text-center">
+            <h2 class="text-2xl font-semibold text-white">Hi {{ user.get_username }}!</h2>
+        </div>
+
+        <!-- Body -->
+        <div class="p-6">
+            <div class="text-center mb-6">
+                <p class="text-gray-700 mb-2">Welcome to this brilliant example of an authentication app with cutting-edge features.</p>
+                <p class="text-gray-700 font-medium">Wanna try them?</p>
+            </div>
+
+            <div class="space-y-3">
+                <a href="{% url 'profile' %}" 
+                   class="block w-full text-center p-3 rounded border border-[#E9967A] text-[#E9967A] hover:bg-[#E9967A] hover:text-white transition-colors duration-200">
+                    Profile
+                </a>
+                <a href="{% url 'password_reset' %}" 
+                   class="block w-full text-center p-3 rounded border border-[#E9967A] text-[#E9967A] hover:bg-[#E9967A] hover:text-white transition-colors duration-200">
+                    Change Password
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-[#E9967A] p-4 text-center">
+            <a href="{% url 'login' %}" class="text-white hover:text-gray-100">
+                Log Out
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
